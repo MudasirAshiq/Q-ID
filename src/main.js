@@ -8,7 +8,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 if (mobileToggle) {
   mobileToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    mobileToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    mobileToggle.classList.toggle('active');
   });
 }
 
@@ -17,7 +17,7 @@ navLinks.forEach(link => {
   link.addEventListener('click', () => {
     if (window.innerWidth <= 768) {
       navMenu.classList.remove('active');
-      mobileToggle.textContent = '☰';
+      mobileToggle.classList.remove('active');
     }
   });
 });
